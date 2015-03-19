@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Profile</h1>
+<br \>
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<div>
+  <h1>Pages Contributed To:</h1>
+  <ul>
+  <% @user.characters.each do |character| %>
+    <li><%= link_to character.name, character_path(character) %></li>
+  <% end %>
+  </ul>
+<br>
+
+<%= link_to 'Back', users_path %>
