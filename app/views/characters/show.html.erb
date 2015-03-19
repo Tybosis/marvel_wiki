@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @character.name %></h1>
+<p>
+  <strong>Name:</strong>
+  <%= @character.name %>
+</p>
+
+<p>
+  <strong>Real name:</strong>
+  <%= @character.realname %>
+</p>
+
+<p>
+  <strong>History:</strong>
+  <%= @character.history %>
+</p>
+
+<p>
+  <strong>Powers:</strong>
+  <%= @character.powers %>
+</p>
+
+<div>
+  <h1>Contributors</h1>
+  <ul>
+  <% @character.users.each do |user| %>
+    <li><%= link_to user.email, user_path(user) %></li>
+  <% end %>
+  </ul>
+</div>
+
+
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %>

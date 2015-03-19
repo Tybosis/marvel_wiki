@@ -1,0 +1,23 @@
+<!doctype html>
+<header>
+  <ul class="head">
+  <% if user_signed_in? %>
+    <li><%= link_to "Characters", characters_path %></li>
+    <li><%= link_to "Profile", current_user %></li>
+    <li><%= link_to "Users", users_path %></li>
+    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+  <% else %>
+      <li><%= link_to "Sign In", new_user_session_path %></li>
+  <% end %>
+  </ul>
+</header>
+
+<div class="info">
+  <img src="http://img.talkandroid.com/uploads/2013/03/comixology-700-free-marvel-comics.jpg" alt="">
+  <h1>Welcome to the Marvel Characters Wiki!</h1>
+  <br />
+  <p>This is your goto resource for finding information for all of your favorite marvel characters!</p>
+  <p>Once you sign in, you will be able to view and edit character articles</p>
+  <p>Please, be courteous and only contribute valuable information!</p>
+  <p>So, what are you waiting for? Sign in or sign up now!</p>
+</div>
